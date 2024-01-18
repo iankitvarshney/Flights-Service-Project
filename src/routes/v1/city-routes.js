@@ -21,4 +21,11 @@ router.get("/:id", CityController.getCity);
 // /api/v1/cities GET
 router.get("/", CityController.getCities);
 
+// /api/v1/cities/:id PATCH
+router.patch(
+  "/:id",
+  CityMiddlewares.validateUpdateRequest,
+  CityController.updateCity
+);
+
 module.exports = router;
